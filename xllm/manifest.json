@@ -1,0 +1,14 @@
+{
+  "plugin_name": "xllm-engineering-skills",
+  "plugin_description": "xLLM manual engineering skills for closed-loop development, test, benchmark, style, review, and skill capture",
+  "skills": [
+    "xllm-dev-loop",
+    "compiler",
+    "test-npu",
+    "test-gpu",
+    "pressure-test",
+    "google-cpp-style",
+    "code-review-risk",
+    "skill-capture"
+  ]
+}

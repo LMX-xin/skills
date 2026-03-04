@@ -92,3 +92,50 @@ The markdown content below contains the instructions, examples, and guidelines t
 Skills are a great way to teach Claude how to get better at using specific pieces of software. As we see awesome example skills from partners, we may highlight some of them here:
 
 - **Notion** - [Notion Skills for Claude](https://www.notion.so/notiondevs/Notion-Skills-for-Claude-28da4445d27180c7af1df7d8615723d0)
+
+# xLLM Engineering Skill Pack
+
+This repository also includes a custom plugin set named `xllm-engineering-skills` with these skills:
+
+- `xllm-dev-loop` (manual end-to-end workflow)
+- `compiler`
+- `test-npu`
+- `test-gpu`
+- `pressure-test`
+- `google-cpp-style`
+- `code-review-risk`
+- `skill-capture`
+
+These are designed for manual invocation, not auto-triggering.  
+Recommended usage:
+
+- Use `/xllm-dev-loop` for full lifecycle execution.
+- Use `/compiler`, `/test npu`, `/test gpu`, `/pressure-test`, `/style`, `/risk-review` for targeted steps.
+
+The source of truth is [`xllm/manifest.json`](./xllm/manifest.json).  
+To update `.claude-plugin/marketplace.json` from the manifest:
+
+```bash
+python3 scripts/sync_marketplace.py
+```
+
+To install these skills into Codex on any machine after cloning this repository:
+
+```bash
+python3 scripts/install_to_codex.py --repo . --mode symlink
+```
+
+Use `--mode copy` if symlink is not desired.
+
+To create and register a new skill from an agent workflow:
+
+```bash
+python3 scripts/create_skill.py --name <skill-name> --description "<trigger + purpose>" --resources scripts,references
+python3 scripts/sync_marketplace.py
+```
+
+Then validate:
+
+```bash
+python3 skills/skill-creator/scripts/quick_validate.py skills/<skill-name>
+```

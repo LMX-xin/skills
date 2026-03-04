@@ -40,6 +40,22 @@
         "./skills/web-artifacts-builder",
         "./skills/webapp-testing"
       ]
+    },
+    {
+      "name": "xllm-engineering-skills",
+      "description": "xLLM manual engineering skills for closed-loop development, test, benchmark, style, review, and skill capture",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/xllm-dev-loop",
+        "./skills/compiler",
+        "./skills/test-npu",
+        "./skills/test-gpu",
+        "./skills/pressure-test",
+        "./skills/google-cpp-style",
+        "./skills/code-review-risk",
+        "./skills/skill-capture"
+      ]
     }
   ]
 }
